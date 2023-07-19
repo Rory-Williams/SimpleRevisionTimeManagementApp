@@ -12,11 +12,6 @@ SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 REPS = 0
 
-# ---------------------------- TIMER RESET ------------------------------- # 
-
-# ---------------------------- TIMER MECHANISM ------------------------------- # 
-
-# ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
@@ -39,6 +34,8 @@ tick = ' '
 tick_label = Label(text=tick, font=('Arial',16,'bold'), fg=GREEN, bg=YELLOW)
 tick_label.grid(column=2,row=4)
 tick_label.config(padx=20, pady=20)
+
+# ---------------------------- TIMER START ------------------------------- #
 
 cont = True
 def but_go():
@@ -65,6 +62,7 @@ def but_go():
         tick += '✔'
         tick_label.config(text=tick)
 
+# ---------------------------- TIMER RESET ------------------------------- #
 
 def but_reset():
     global cont
@@ -92,6 +90,7 @@ def add_zero(string):
     else:
         return string
 
+# ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 def time_funct(total_secs):
     global cont
     if total_secs > 0 and cont:
